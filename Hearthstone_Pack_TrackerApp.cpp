@@ -8,7 +8,7 @@
  **************************************************************/
 
 #ifdef WX_PRECOMP
-#include "wx_pch.h"
+    #include "wx_pch.h"
 #endif
 
 #ifdef __BORLANDC__
@@ -29,5 +29,4 @@ bool Hearthstone_Pack_TrackerApp::OnInit()
     m_frame = new MainFrame(NULL,wxT("Hearthstone"),wxSize(600,800));
     m_frame->Show();
     return true;
-
 }
