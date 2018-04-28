@@ -9,17 +9,28 @@
 #ifndef MAINFRAME_H_INCLUDED
 #define MAINFRAME_H_INCLUDED
 
+#include "wx/editlbox.h"
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
 #endif
 
 class MainFrame : public wxFrame
 {
+
     public:
         MainFrame(wxWindow *parent,wxString title,wxSize sze);
         ~MainFrame();
     protected:
+        enum {
 
+                idBtnCollect,
+                idBtnLoad,
+                idChoiceRarity,
+                idChoiceClass,
+                idChoiceMana,
+                idChoiceCardType,
+                idChoiceGolden,
+            };
     private:
         //fUNCTIONS
         void OnClose(wxCloseEvent& event);
@@ -29,6 +40,19 @@ class MainFrame : public wxFrame
         void PopulateLists();
         void OnSize(wxSizeEvent& event);
         void OnMouseUp(wxMouseEvent& event);
+        void GetCollection();
+        void OnLoad(wxCommandEvent& event);
+        void OnCollect(wxCommandEvent& event);
+        void OnSelectRarity(wxCommandEvent& event);
+        void OnSelectClass(wxCommandEvent& event);
+        void OnSelectMana(wxCommandEvent& event);
+        void OnSelectCardType(wxCommandEvent& event);
+        void OnSelectGolden(wxCommandEvent& event);
+        wxString ParseFor(std::string id,std::string fileName);
+        std::string IntToStr(int n);
+        void modify_collection(std::string str);
+        void SweepLog();
+        void FilterCollection(std::string stat,std::string stat_val,int cost_val);
 
         //varaibles
         wxSize m_win_size;
@@ -60,7 +84,11 @@ class MainFrame : public wxFrame
         wxArrayString m_rarity_golden_list;
 
         //OTHER
-        wxListBox * m_card_list;
+        wxEditableListBox* m_card_list;
+        wxArrayString m_collection;
+        wxArrayString m_filtered_cards;
+        wxString m_log_path;
+
 
         DECLARE_EVENT_TABLE()
 };
