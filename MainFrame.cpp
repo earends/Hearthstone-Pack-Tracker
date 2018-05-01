@@ -41,7 +41,8 @@ END_EVENT_TABLE()
 MainFrame::MainFrame (wxWindow *parent,wxString title,wxSize sze)
     :wxFrame(parent, wxID_ANY, title, wxDefaultPosition, sze)
 {
-
+    //initialize anything
+    filterCheck = false;
     //Initialize lists
     PopulateLists();
 
@@ -168,7 +169,7 @@ void MainFrame::SweepLog() {
         }
     }
     infile.close();
-    rename(m_log_path,"use_last_modified_log_file.log");
+    //rename(m_log_path,"use_last_modified_log_file.log");
     m_log_path = "";
     m_card_list->SetStrings(m_collection);
 
@@ -415,7 +416,6 @@ void MainFrame::OnSelectCardType(wxCommandEvent& event) {
         case 9:
         FilterCollection("type","MINION",-1);
         break;
-        break;
     case 2:
         FilterCollection("type","SPELL",-1);
         break;
@@ -441,9 +441,9 @@ void MainFrame::OnSelectGolden(wxCommandEvent& event) {
 }
 
 
-bool MainFrame::CardHasStats(std::string stat,std::string stat_val,int cost_val,std::string cardId) {
+bool MainFrame::CardHasStats(std::string stat,std::string stat_val,int cost_val,wxString cardId) {
 
-    std::string str = "./cards/" + cardId + ".json";
+    std::string str = "./cards/" + std::string(cardId) + ".json";
     const char * c = str.c_str();
     FILE* fp = fopen(c, "rb"); // non-Windows use "r"
     char readBuffer[65536];
@@ -469,22 +469,48 @@ bool MainFrame::CardHasStats(std::string stat,std::string stat_val,int cost_val,
 }
 
 void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_val) {
-    std::ifstream infile("collection.txt");
-    std::string line;
-    while (infile >> line)
-    {
-        if (CardHasStats(stat,stat_val,cost_val,line)) {
-            m_filtered_cards.Add(ParseFor("name",line));
+    if (filterCheck) {
+        FilterBuffer(stat,stat_val,cost_val);
+    } else {
+            filterCheck = true;
+            std::ifstream infile("collection.txt");
+            std::string line;
+            while (infile >> line)
+            {
+                if (CardHasStats(stat,stat_val,cost_val,line)) {
+                    m_filtered_cards.Add(ParseFor("name",line));
+                    m_filtered_ids.Add(line);
+                }
+            }
+            m_card_list->SetStrings(m_filtered_cards);
+
+
+            infile.close();
+    }
+
+
+}
+
+void MainFrame::FilterBuffer(std::string stat,std::string stat_val,int cost_val)  {
+    /**
+    loop through filtered ids filter some more
+    **/
+    m_filtered_cards.Clear();
+    wxArrayString temp;
+    for (int i = 0; i < m_filtered_ids.GetCount(); i ++) {
+        wxString cardId = m_filtered_ids.Item(i);
+        if (CardHasStats(stat,stat_val,cost_val,cardId)) {
+            m_filtered_cards.Add(ParseFor("name",cardId));
+            temp.Add(m_filtered_ids.Item(i));
         }
     }
+    m_filtered_ids = temp;
     m_card_list->SetStrings(m_filtered_cards);
-
-
-    infile.close();
 }
 
 void MainFrame::OnResetFilter(wxCommandEvent& event) {
     m_card_list->SetStrings(m_collection);
+    filterCheck = false;
     m_filtered_cards.Clear();
     m_rarity_choice->SetSelection(0);
     m_class_choice->SetSelection(0);
@@ -519,6 +545,8 @@ void MainFrame::OnConfigurePowerLog(wxCommandEvent& event) {
 
 }
 
+
+
 /**
 Functionality that is still needed
 Filters need to be stacked
@@ -526,7 +554,6 @@ add if card is golden to collection
     - adapt read settings or make seprate file to set gold
 add stats at bottom of screen
 preferably drop down menu
-
 **/
 
 

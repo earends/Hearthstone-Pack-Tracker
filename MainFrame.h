@@ -54,8 +54,9 @@ class MainFrame : public wxFrame
         std::string IntToStr(int n);
         void modify_collection(std::string str);
         void SweepLog();
-        bool CardHasStats(std::string stat,std::string stat_val,int cost_val,std::string cardId);
+        bool CardHasStats(std::string stat,std::string stat_val,int cost_val,wxString cardId);
         void FilterCollection(std::string stat,std::string stat_val,int cost_val);
+        void FilterBuffer(std::string stat,std::string stat_val,int cost_val);
         void OnResetFilter(wxCommandEvent &event);
         void OnConfigurePowerLog(wxCommandEvent& event);
         //varaibles
@@ -93,6 +94,8 @@ class MainFrame : public wxFrame
         wxArrayString m_filtered_cards;
         wxString m_log_path;
         wxString m_power_log_path;
+        wxArrayString m_filtered_ids;
+        bool filterCheck;
 
         DECLARE_EVENT_TABLE()
 };
