@@ -42,7 +42,7 @@ MainFrame::MainFrame (wxWindow *parent,wxString title,wxSize sze)
     :wxFrame(parent, wxID_ANY, title, wxDefaultPosition, sze)
 {
     //initialize anything
-    filterCheck = false;
+
     //Initialize lists
     PopulateLists();
 
@@ -220,6 +220,7 @@ void MainFrame::OnMouseUp(wxMouseEvent& event) {
 }
 
 void MainFrame::PopulateLists() {
+
     m_class_list = wxArrayString();
     m_class_list.Add("None");
     m_class_list.Add("Warrior");
@@ -329,6 +330,7 @@ void MainFrame::OnSelectRarity(wxCommandEvent& event) {
         FilterCollection("rarity","COMMON",-1);
         break;
     default:
+        RemoveFromFilter("rarity");
         break;
     }
 }
@@ -366,6 +368,7 @@ void MainFrame::OnSelectClass(wxCommandEvent& event) {
         FilterCollection("cardClass","NEUTRAL",-1);
         break;
     default:
+        RemoveFromFilter("cardClass");
         break;
     }
 }
@@ -406,6 +409,7 @@ void MainFrame::OnSelectMana(wxCommandEvent& event) {
         FilterCollection("cost","",10);
         break;
     default:
+        RemoveFromFilter("cost");
         break;
     }
 }
@@ -423,6 +427,7 @@ void MainFrame::OnSelectCardType(wxCommandEvent& event) {
         FilterCollection("type","WEAPON",-1);
         break;
     default:
+        RemoveFromFilter("type");
         break;
     }
 }
@@ -435,6 +440,7 @@ void MainFrame::OnSelectGolden(wxCommandEvent& event) {
     case 2:
         wxMessageBox("2");
         break;
+
     default:
         break;
     }
@@ -468,15 +474,30 @@ bool MainFrame::CardHasStats(std::string stat,std::string stat_val,int cost_val,
     fclose(fp);
 }
 
+/**
+PROBLEM:
+    - FILTER THROUGH ALL
+    - BUT COST IS INT AND REST ARE STR
+SOLUTION
+    - LOOP THROUGH STATS
+    - WHEN APROACH COST
+        - SET SAME VALUES
+        - CONVERT TO INT
+START AT ON SELECT VALUE AND GO FROM THERE
+**/
 void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_val) {
-    if (filterCheck) {
-        FilterBuffer(stat,stat_val,cost_val);
-    } else {
-            filterCheck = true;
+
+
             std::ifstream infile("collection.txt");
             std::string line;
             while (infile >> line)
             {
+                for (int i = 0; i < m_filters_selected.GetCount(); i ++) {
+                    if (CardHasStats(m_filters_selected.Item(i),m_filters_selected_values.Item(i),cost_val,line)) {
+                        m_filtered_cards.Add(ParseFor("name",line));
+                        m_filtered_ids.Add(line);
+                    }
+                }
                 if (CardHasStats(stat,stat_val,cost_val,line)) {
                     m_filtered_cards.Add(ParseFor("name",line));
                     m_filtered_ids.Add(line);
@@ -486,31 +507,35 @@ void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_
 
 
             infile.close();
-    }
+
 
 
 }
 
+/**
+Function needs to sift through list of filters and list of values
+**/
 void MainFrame::FilterBuffer(std::string stat,std::string stat_val,int cost_val)  {
-    /**
-    loop through filtered ids filter some more
-    **/
-    m_filtered_cards.Clear();
-    wxArrayString temp;
-    for (int i = 0; i < m_filtered_ids.GetCount(); i ++) {
-        wxString cardId = m_filtered_ids.Item(i);
-        if (CardHasStats(stat,stat_val,cost_val,cardId)) {
-            m_filtered_cards.Add(ParseFor("name",cardId));
-            temp.Add(m_filtered_ids.Item(i));
-        }
-    }
-    m_filtered_ids = temp;
-    m_card_list->SetStrings(m_filtered_cards);
+            std::ifstream infile("collection.txt");
+            std::string line;
+            while (infile >> line)
+            {
+                for (int i = 0; i < m_filters_selected.GetCount(); i ++) {
+                    if (CardHasStats(m_filters_selected.Item(i),stat_val,cost_val,line)) {
+                        m_filtered_cards.Add(ParseFor("name",line));
+                        m_filtered_ids.Add(line);
+                    }
+                }
+
+            }
+            m_card_list->SetStrings(m_filtered_cards);
+
+
+            infile.close();
 }
 
 void MainFrame::OnResetFilter(wxCommandEvent& event) {
     m_card_list->SetStrings(m_collection);
-    filterCheck = false;
     m_filtered_cards.Clear();
     m_rarity_choice->SetSelection(0);
     m_class_choice->SetSelection(0);
@@ -543,6 +568,14 @@ void MainFrame::OnConfigurePowerLog(wxCommandEvent& event) {
     myfile << "[Achievements]\nLogLevel=1\nFilePrinting=true\nConsolePrinting=true\nScreenPrinting=false\n\n[Power]\nLogLevel=1\nFilePrinting=true\nConsolePrinting=true\nScreenPrinting=false\n";
     myfile.close();
 
+}
+
+void MainFrame::RemoveFromFilter(std::string stat,std::string stat_val,int cost_val) {
+    int index = m_filtered_cards.Index(stat)
+    if ( index!= wxNOT_FOUND) {
+        m_filtered_cards.RemoveAt(index);
+        m_filters_selected_values.RemoveAt(index);
+    }
 }
 
 

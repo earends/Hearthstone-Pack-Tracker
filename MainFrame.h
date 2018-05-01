@@ -59,6 +59,8 @@ class MainFrame : public wxFrame
         void FilterBuffer(std::string stat,std::string stat_val,int cost_val);
         void OnResetFilter(wxCommandEvent &event);
         void OnConfigurePowerLog(wxCommandEvent& event);
+        void RemoveFromFilter(std::string stat);
+
         //varaibles
         wxSize m_win_size;
         //sIZERS
@@ -95,7 +97,9 @@ class MainFrame : public wxFrame
         wxString m_log_path;
         wxString m_power_log_path;
         wxArrayString m_filtered_ids;
-        bool filterCheck;
+        wxArrayString m_filters_selected;
+        wxArrayString m_filters_selected_values;
+
 
         DECLARE_EVENT_TABLE()
 };
