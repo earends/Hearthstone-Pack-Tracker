@@ -29,6 +29,8 @@ BEGIN_EVENT_TABLE(MainFrame, wxFrame)
     EVT_MOTION(MainFrame::OnMouseUp)
     EVT_MENU(idBtnLoad,MainFrame::OnLoad)
     EVT_MENU(idBtnCollect,MainFrame::OnCollect)
+    EVT_MENU(idBtnReset,MainFrame::OnResetFilter)
+    EVT_MENU(idBtnLoadPowerLog,MainFrame::OnConfigurePowerLog)
     EVT_CHOICE(idChoiceRarity,MainFrame::OnSelectRarity)
     EVT_CHOICE(idChoiceClass,MainFrame::OnSelectClass)
     EVT_CHOICE(idChoiceMana,MainFrame::OnSelectMana)
@@ -76,8 +78,11 @@ void MainFrame::CreateMenuStatus() {
     // The “About” item should be in the help menu
     wxMenu *helpMenu = new wxMenu;
     helpMenu->Append(wxID_ABOUT, wxT("&About...\tF1"),wxT("Show about dialog"));
+    fileMenu->Append(idBtnLoadPowerLog,wxT("Configure Power Log File"),wxT("Show something"));
     fileMenu->Append(idBtnLoad,wxT("Load Log File"),wxT("Show something"));
+
     fileMenu->Append(idBtnCollect,wxT("Collect new cards"),wxT("Show something"));
+    fileMenu->Append(idBtnReset,wxT("Reset Filter"),wxT("Show something"));
     fileMenu->Append(wxID_EXIT, wxT("E&xit\tAlt-X"),wxT("Quit this program"));
     // Now append the freshly created menu to the menu bar...
     wxMenuBar *menuBar = new wxMenuBar();
@@ -225,6 +230,7 @@ void MainFrame::PopulateLists() {
     m_class_list.Add("Warlock");
     m_class_list.Add("Mage");
     m_class_list.Add("Priest");
+    m_class_list.Add("Neutral");
 
     m_type_list = wxArrayString();
     m_type_list.Add("None");
@@ -252,7 +258,6 @@ void MainFrame::PopulateLists() {
     m_rarity_list.Add("Epic");
     m_rarity_list.Add("Rare");
     m_rarity_list.Add("Common");
-    m_rarity_list.Add("Hunter");
 
     m_rarity_golden_list = wxArrayString();
     m_rarity_golden_list.Add("None");
@@ -274,6 +279,7 @@ void MainFrame::GetCollection() {
 }
 
 wxString MainFrame::ParseFor(std::string id,std::string fileName) {
+
     std::string str = "./cards/" + fileName + ".json";
     const char * c = str.c_str();
     FILE* fp = fopen(c, "rb"); // non-Windows use "r"
@@ -310,19 +316,16 @@ void MainFrame::modify_collection(std::string str) {
 void MainFrame::OnSelectRarity(wxCommandEvent& event) {
     switch (event.GetSelection()) {
     case 1:
-        wxMessageBox("1");
+        FilterCollection("rarity","LEGENDARY",-1);
         break;
     case 2:
-        wxMessageBox("2");
+        FilterCollection("rarity","EPIC",-1);
         break;
     case 3:
-        wxMessageBox("3");
+        FilterCollection("rarity","RARE",-1);
         break;
     case 4:
-        wxMessageBox("4");
-        break;
-    case 5:
-        wxMessageBox("5");
+        FilterCollection("rarity","COMMON",-1);
         break;
     default:
         break;
@@ -332,31 +335,34 @@ void MainFrame::OnSelectRarity(wxCommandEvent& event) {
 void MainFrame::OnSelectClass(wxCommandEvent& event) {
     switch (event.GetSelection()) {
     case 1:
-        wxMessageBox("1");
+        FilterCollection("cardClass","WARRIOR",-1);
         break;
     case 2:
-        wxMessageBox("2");
+        FilterCollection("cardClass","SHAMAN",-1);
         break;
     case 3:
-        wxMessageBox("3");
+        FilterCollection("cardClass","ROGUE",-1);
         break;
     case 4:
-        wxMessageBox("4");
+        FilterCollection("cardClass","PALADIN",-1);
         break;
     case 5:
-        wxMessageBox("5");
+        FilterCollection("cardClass","HUNTER",-1);
         break;
     case 6:
-        wxMessageBox("6");
+        FilterCollection("cardClass","DRUID",-1);
         break;
     case 7:
-        wxMessageBox("7");
+        FilterCollection("cardClass","WARLOCK",-1);
         break;
     case 8:
-        wxMessageBox("8");
+        FilterCollection("cardClass","MAGE",-1);
         break;
     case 9:
-        wxMessageBox("9");
+        FilterCollection("cardClass","PRIEST",-1);
+        break;
+    case 10:
+        FilterCollection("cardClass","NEUTRAL",-1);
         break;
     default:
         break;
@@ -366,37 +372,37 @@ void MainFrame::OnSelectClass(wxCommandEvent& event) {
 void MainFrame::OnSelectMana(wxCommandEvent& event) {
     switch (event.GetSelection()) {
     case 1: // 0 mana
-        wxMessageBox("1");
+        FilterCollection("cost","",0);
         break;
     case 2:
-        wxMessageBox("2");
+        FilterCollection("cost","",1);
         break;
     case 3:
-        wxMessageBox("3");
+        FilterCollection("cost","",2);
         break;
     case 4:
-        wxMessageBox("4");
+        FilterCollection("cost","",3);
         break;
     case 5:
-        wxMessageBox("5");
+        FilterCollection("cost","",4);
         break;
     case 6:
-
+        FilterCollection("cost","",5);
         break;
     case 7:
-        wxMessageBox("7");
+        FilterCollection("cost","",6);
         break;
     case 8:
-        wxMessageBox("8");
+        FilterCollection("cost","",7);
         break;
     case 9:
-        wxMessageBox("9");
+        FilterCollection("cost","",8);
         break;
     case 10:
-        wxMessageBox("10");
+        FilterCollection("cost","",9);
         break;
     case 11:
-        wxMessageBox("11");
+        FilterCollection("cost","",10);
         break;
     default:
         break;
@@ -406,13 +412,15 @@ void MainFrame::OnSelectMana(wxCommandEvent& event) {
 void MainFrame::OnSelectCardType(wxCommandEvent& event) {
     switch (event.GetSelection()) {
     case 1:
-        wxMessageBox("1");
+        case 9:
+        FilterCollection("type","MINION",-1);
+        break;
         break;
     case 2:
-        wxMessageBox("2");
+        FilterCollection("type","SPELL",-1);
         break;
     case 3:
-        wxMessageBox("3");
+        FilterCollection("type","WEAPON",-1);
         break;
     default:
         break;
@@ -432,20 +440,10 @@ void MainFrame::OnSelectGolden(wxCommandEvent& event) {
     }
 }
 
-/**
-This function needs still to...
-    - loop through card collection
-    - check to see if card being read has stats
-    - if it has stats
-        - add to filter buffer list
-    - if it doesent have stats
-        - dont add
-    - set strings to list
-    - make reset filter buffer function
-**/
-void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_val) {
 
-    std::string str;// = "./cards/" + id + ".json";
+bool MainFrame::CardHasStats(std::string stat,std::string stat_val,int cost_val,std::string cardId) {
+
+    std::string str = "./cards/" + cardId + ".json";
     const char * c = str.c_str();
     FILE* fp = fopen(c, "rb"); // non-Windows use "r"
     char readBuffer[65536];
@@ -455,20 +453,81 @@ void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_
 
     if (cost_val == -1) { // if we are not looking for a cards mana cost
         if (d[stat.c_str()].GetString() == stat_val) {
-            wxMessageBox("equals");
+            return true;
         } else {
-            wxMessageBox("not equals");
+            return false;
         }
     } else { // if we ARE looking for a cards mana cost
         if (d[stat.c_str()].GetInt() == cost_val) {
-            wxMessageBox("equals");
+            return true;
         } else {
-            wxMessageBox("not equals");
+            return false;
         }
     }
 
     fclose(fp);
 }
+
+void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_val) {
+    std::ifstream infile("collection.txt");
+    std::string line;
+    while (infile >> line)
+    {
+        if (CardHasStats(stat,stat_val,cost_val,line)) {
+            m_filtered_cards.Add(ParseFor("name",line));
+        }
+    }
+    m_card_list->SetStrings(m_filtered_cards);
+
+
+    infile.close();
+}
+
+void MainFrame::OnResetFilter(wxCommandEvent& event) {
+    m_card_list->SetStrings(m_collection);
+    m_filtered_cards.Clear();
+    m_rarity_choice->SetSelection(0);
+    m_class_choice->SetSelection(0);
+    m_cost_choice->SetSelection(0);
+    m_card_type_choice->SetSelection(0);
+    m_rarity_golden_choice->SetSelection(0);
+}
+
+void MainFrame::OnConfigurePowerLog(wxCommandEvent& event) {
+
+    wxMessageBox("Go to your hearthstone folder via AppData, something like C:/Users/<user>/Local/Blizzard/Hearthstone to configure power log file");
+
+    wxString defaultDir = wxT("c:\\temp");
+
+    wxString defaultFilename = wxEmptyString;
+    wxDirDialog dialog(NULL, "Choose input directory", defaultDir,wxDD_DEFAULT_STYLE | wxDD_DIR_MUST_EXIST);
+    //wxFileDialog dialog(this, caption, defaultDir, defaultFilename,wildcard);
+    if (dialog.ShowModal() == wxID_OK)
+    {
+    m_power_log_path = dialog.GetPath();
+    }
+    if (dialog.GetPath() == "") {
+        wxMessageBox(wxT("No Path Selected"));
+        return;
+    }
+
+
+    std::ofstream myfile;
+    myfile.open (dialog.GetPath() + "/log.config");
+    myfile << "[Achievements]\nLogLevel=1\nFilePrinting=true\nConsolePrinting=true\nScreenPrinting=false\n\n[Power]\nLogLevel=1\nFilePrinting=true\nConsolePrinting=true\nScreenPrinting=false\n";
+    myfile.close();
+
+}
+
+/**
+Functionality that is still needed
+Filters need to be stacked
+add if card is golden to collection
+    - adapt read settings or make seprate file to set gold
+add stats at bottom of screen
+preferably drop down menu
+
+**/
 
 
 

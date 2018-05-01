@@ -25,6 +25,8 @@ class MainFrame : public wxFrame
 
                 idBtnCollect,
                 idBtnLoad,
+                idBtnReset,
+                idBtnLoadPowerLog,
                 idChoiceRarity,
                 idChoiceClass,
                 idChoiceMana,
@@ -52,8 +54,10 @@ class MainFrame : public wxFrame
         std::string IntToStr(int n);
         void modify_collection(std::string str);
         void SweepLog();
+        bool CardHasStats(std::string stat,std::string stat_val,int cost_val,std::string cardId);
         void FilterCollection(std::string stat,std::string stat_val,int cost_val);
-
+        void OnResetFilter(wxCommandEvent &event);
+        void OnConfigurePowerLog(wxCommandEvent& event);
         //varaibles
         wxSize m_win_size;
         //sIZERS
@@ -88,7 +92,7 @@ class MainFrame : public wxFrame
         wxArrayString m_collection;
         wxArrayString m_filtered_cards;
         wxString m_log_path;
-
+        wxString m_power_log_path;
 
         DECLARE_EVENT_TABLE()
 };

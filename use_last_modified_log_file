@@ -1,0 +1,173 @@
+2018-04-26 15:34:04.453: Logging Unity output to: C:/Users/Evan/AppData/Local/Blizzard/Hearthstone/Logs/hearthstone_2018_04_26_15_34_04.log
+2018-04-26 15:34:04.466: Command Line: -launch -uid hs_beta
+2018-04-26 15:34:04.947: Current working dir=C:\Program Files (x86)\Hearthstone
+2018-04-26 15:34:04.963: Error loading config file client.config
+
+2018-04-26 15:34:04.969: Failed to load config file: 
+
+2018-04-26 15:34:08.230: System Info:
+2018-04-26 15:34:08.236: SystemInfo - Device Name: DESKTOP-4IGBITF
+2018-04-26 15:34:08.246: SystemInfo - Device Model: MacBookAir6,2 (Apple Inc.)
+2018-04-26 15:34:08.253: SystemInfo - OS: Windows 10  (10.0.0) 64bit
+2018-04-26 15:34:08.260: SystemInfo - CPU Type: Intel(R) Core(TM) i5-4250U CPU @ 1.30GHz
+2018-04-26 15:34:08.265: SystemInfo - CPU Cores: 4
+2018-04-26 15:34:08.271: SystemInfo - System Memory: 4036
+2018-04-26 15:34:08.278: SystemInfo - Screen Resolution: 1440x900
+2018-04-26 15:34:08.288: SystemInfo - Screen DPI: 96
+2018-04-26 15:34:08.295: SystemInfo - GPU ID: 2598
+2018-04-26 15:34:08.303: SystemInfo - GPU Name: Intel(R) HD Graphics 5000
+2018-04-26 15:34:08.309: SystemInfo - GPU Vendor: Intel
+2018-04-26 15:34:08.315: SystemInfo - GPU Memory: 1121
+2018-04-26 15:34:08.321: SystemInfo - GPU Shader Level: 50
+2018-04-26 15:34:08.328: SystemInfo - GPU NPOT Support: Full
+2018-04-26 15:34:08.333: SystemInfo - Graphics API (version): Direct3D 11.0 [level 11.1]
+2018-04-26 15:34:08.340: SystemInfo - Graphics API (type): Direct3D11
+2018-04-26 15:34:08.346: SystemInfo - Graphics Supported Render Target Count: 8
+2018-04-26 15:34:08.352: SystemInfo - Graphics Supports 3D Textures: True
+2018-04-26 15:34:08.358: SystemInfo - Graphics Supports Compute Shaders: True
+2018-04-26 15:34:08.367: SystemInfo - Graphics Supports Image Effects: True
+2018-04-26 15:34:08.375: SystemInfo - Graphics Supports Render To Cubemap: True
+2018-04-26 15:34:08.381: SystemInfo - Graphics Supports Shadows: True
+2018-04-26 15:34:08.387: SystemInfo - Graphics Supports Sparse Textures: False
+2018-04-26 15:34:08.394: SystemInfo - Graphics RenderTextureFormat.ARGBHalf: True
+2018-04-26 15:34:08.399: SystemInfo - Graphics Metal Support: False
+2018-04-26 15:34:08.967: OnAfterDeserialize (56182 assets)
+2018-04-26 15:34:09.007: Spent 0.3896246s so far reading Data/win/rad_base.unity3d..
+2018-04-26 15:34:09.051: OnAfterDeserialize (3563 assets)
+2018-04-26 15:34:09.065: Spent 0.4470568s so far reading Data/win/rad_enus.unity3d..
+2018-04-26 15:34:09.509: Spent 0.891819s total time reading RuntimeAssetDatabase
+2018-04-26 15:34:13.739: FSM not Preprocessed: DrawerClose : FSM
+2018-04-26 15:34:13.748: FSM not Preprocessed: DiskLoading : FSM
+2018-04-26 15:34:13.757: FSM not Preprocessed: DiskMainMenu : FSM
+2018-04-26 15:34:13.765: FSM not Preprocessed: DoorsClose : FSM
+2018-04-26 15:34:13.774: FSM not Preprocessed: DrawerOpen : FSM
+2018-04-26 15:34:13.783: FSM not Preprocessed: DoorsOpen : FSM
+2018-04-26 15:34:13.792: FSM not Preprocessed: ShadowFadeIn : FSM
+2018-04-26 15:34:13.802: FSM not Preprocessed: ShadowFadeOut : FSM
+2018-04-26 15:34:13.819: FSM not Preprocessed: Startup_Hub : FSM
+2018-04-26 15:34:13.828: FSM not Preprocessed: Startup_Tutorial : FSM
+2018-04-26 15:34:13.840: FSM not Preprocessed: Tutorial_Play : FSM
+2018-04-26 15:34:13.849: FSM not Preprocessed: Startup_SetRotation : FSM
+2018-04-26 15:34:13.856: FSM not Preprocessed: CollectionLightState : FSM
+2018-04-26 15:34:13.863: FSM not Preprocessed: TutorialLightState : FSM
+2018-04-26 15:34:13.870: FSM not Preprocessed: DefaultLightState : FSM
+2018-04-26 15:34:13.878: FSM not Preprocessed: PackOpeningLightState : FSM
+2018-04-26 15:34:13.887: FSM not Preprocessed: TournamentLightState : FSM
+2018-04-26 15:34:13.895: FSM not Preprocessed: ForgeLightState : FSM
+2018-04-26 15:34:13.914: FSM not Preprocessed: TavernBrawlButton : FSM
+2018-04-26 15:34:13.921: FSM not Preprocessed: ForgeButton : FSM
+2018-04-26 15:34:13.928: FSM not Preprocessed: SoloAdventuresButton : FSM
+2018-04-26 15:34:13.937: FSM not Preprocessed: TournamentButton : FSM
+2018-04-26 15:34:13.944: FSM not Preprocessed: Button_Collection_mesh : FSM
+2018-04-26 15:34:13.954: FSM not Preprocessed: Button_OpenPacks_mesh : FSM
+2018-04-26 15:34:13.964: FSM not Preprocessed: FadeFromBlack : FSM
+2018-04-26 15:34:13.975: FSM not Preprocessed: Blur : FSM
+2018-04-26 15:34:14.561: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id CS2_056_H1
+
+2018-04-26 15:34:14.580: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id TB_HeadlessHorseman_005
+
+2018-04-26 15:34:14.598: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id KARA_13_15
+
+2018-04-26 15:34:14.606: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id KARA_13_16
+
+2018-04-26 15:34:14.615: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id KARA_13_17
+
+2018-04-26 15:34:14.623: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id KARA_13_19
+
+2018-04-26 15:34:14.655: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id KARA_13_20
+
+2018-04-26 15:34:14.665: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id KARA_13_22
+
+2018-04-26 15:34:14.672: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id KARA_13_23
+
+2018-04-26 15:34:14.687: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id FB_LK_013h
+
+2018-04-26 15:34:14.693: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id FB_LK_014h
+
+2018-04-26 15:34:14.700: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id FB_LK_Raid_Hero
+
+2018-04-26 15:34:14.737: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id GILA_BOSS_24p
+
+2018-04-26 15:34:14.751: AssetLoader.LoadBatchedCardXmls: Loaded duplicate card id TB_HeadlessHorseman_005e
+
+2018-04-26 15:34:15.435: Unsupported encoding: 'iso-8859-1,application/json'
+2018-04-26 15:34:15.851: [Achievements] Blocking AchievementNotification: ID=1163
+2018-04-26 15:34:15.857: [Achievements] Blocking AchievementNotification: ID=1165
+2018-04-26 15:34:15.875: [Achievements] PopupDisplayManager: adding 0 rewards to load total=0
+2018-04-26 15:34:16.338: [Achievements] Blocking AchievementNotification: ID=2090
+2018-04-26 15:34:16.346: [Achievements] Blocking AchievementNotification: ID=1163
+2018-04-26 15:34:16.354: [Achievements] PopupDisplayManager: adding 0 rewards to load total=0
+2018-04-26 15:34:16.375: RegisterScreenBox tempGuardianVars=NetCache+NetCacheFeatures
+2018-04-26 15:34:16.903: [Achievements] OnAchieveNotification PlayerID=2042803 ID=1163 Complete=False New=True Remove=False Amount=0
+2018-04-26 15:34:16.912: [Achievements] OnAchievementNotification: Achievement=[Achievement: ID=1163 AchieveGroup=DAILY_QUEST Name='2 Victories!' MaxProgress=2 Progress=0 AckProgress=-1 IsActive=True DateGiven=131692556560000000 DateCompleted=131685782340000000 Description='Win 2 games with any class.' Trigger=WIN_GAME CanAck=True]
+2018-04-26 15:34:16.920: [Achievements] OnAchieveNotification PlayerID=2042803 ID=1165 Complete=False New=True Remove=False Amount=0
+2018-04-26 15:34:16.928: [Achievements] OnAchievementNotification: Achievement=[Achievement: ID=1165 AchieveGroup=DAILY_QUEST Name='Druid or Rogue Victory' MaxProgress=1 Progress=0 AckProgress=-1 IsActive=True DateGiven=131692556560000000 DateCompleted=131692556550000000 Description='Win a game with Druid or Rogue.' Trigger=WIN_GAME CanAck=True]
+2018-04-26 15:34:16.937: [Achievements] OnAchieveNotification PlayerID=2042803 ID=2090 Complete=False New=True Remove=False Amount=0
+2018-04-26 15:34:16.944: [Achievements] OnAchievementNotification: Achievement=[Achievement: ID=2090 AchieveGroup=LOGIN_ACTIVATED Name='Monster Hunt' MaxProgress=10 Progress=0 AckProgress=-1 IsActive=True DateGiven=131692556560000000 DateCompleted=0 Description='Defeat 10 monsters as the Tracker.' Trigger=WIN_GAME CanAck=False]
+2018-04-26 15:34:16.952: [Achievements] OnAchieveNotification PlayerID=2042803 ID=1163 Complete=False New=False Remove=True Amount=0
+2018-04-26 15:34:16.959: [Achievements] OnAchievementNotification: Achievement=[Achievement: ID=1163 AchieveGroup=DAILY_QUEST Name='2 Victories!' MaxProgress=2 Progress=0 AckProgress=-1 IsActive=False DateGiven=131692556560000000 DateCompleted=131685782340000000 Description='Win 2 games with any class.' Trigger=WIN_GAME CanAck=True]
+2018-04-26 15:34:16.967: [Achievements] PopupDisplayManager: adding 0 rewards to load total=0
+2018-04-26 15:34:16.979: [Achievements] NetCache.OnProfileNotices(): sending notices to DialogManager::OnNewNotices
+2018-04-26 15:34:16.988: [Achievements] NetCache.OnProfileNotices(): sending notices to AdventureProgressMgr::OnNewNotices
+2018-04-26 15:34:16.997: [Achievements] NetCache.OnProfileNotices(): sending notices to AchieveManager::OnNewNotices
+2018-04-26 15:34:17.005: [Achievements] NetCache.OnProfileNotices(): sending notices to GenericRewardChestNoticeManager::OnNewNotices
+2018-04-26 15:34:17.016: [Achievements] NetCache.OnProfileNotices(): sending notices to AccountLicenseMgr::OnNewNotices
+2018-04-26 15:34:17.024: [Achievements] NetCache.OnProfileNotices(): sending notices to FixedRewardsMgr::OnNewNotices
+2018-04-26 15:34:17.033: [Achievements] NetCache.OnProfileNotices(): sending notices to PopupDisplayManager::OnNewNotices
+2018-04-26 15:34:17.041: [Achievements] NetCache.OnProfileNotices(): sending notices to StoreManager::OnNewNotices
+2018-04-26 15:34:17.048: [Achievements] NetCache.OnProfileNotices(): sending notices to GeneralStorePacksPane::OnNewNotices
+2018-04-26 15:34:17.056: [Achievements] NetCache.OnProfileNotices(): sending notices to DialogManager::OnNewNotices
+2018-04-26 15:34:17.063: [Achievements] NetCache.OnProfileNotices(): sending notices to AdventureProgressMgr::OnNewNotices
+2018-04-26 15:34:17.070: [Achievements] NetCache.OnProfileNotices(): sending notices to AchieveManager::OnNewNotices
+2018-04-26 15:34:17.076: [Achievements] NetCache.OnProfileNotices(): sending notices to GenericRewardChestNoticeManager::OnNewNotices
+2018-04-26 15:34:17.085: [Achievements] NetCache.OnProfileNotices(): sending notices to AccountLicenseMgr::OnNewNotices
+2018-04-26 15:34:17.091: [Achievements] NetCache.OnProfileNotices(): sending notices to FixedRewardsMgr::OnNewNotices
+2018-04-26 15:34:17.098: [Achievements] NetCache.OnProfileNotices(): sending notices to PopupDisplayManager::OnNewNotices
+2018-04-26 15:34:17.104: [Achievements] NetCache.OnProfileNotices(): sending notices to StoreManager::OnNewNotices
+2018-04-26 15:34:17.111: [Achievements] NetCache.OnProfileNotices(): sending notices to GeneralStorePacksPane::OnNewNotices
+2018-04-26 15:34:17.266: [HealthyGaming] CAIS ServerEnabledForPlatform=False AccountCAISForChina=False Country=USA TimeSec=13.1003 PlayedTimeMin=0 RestedTimeMin=0 SessionStartTime=4239410560
+2018-04-26 15:34:18.729: [Achievements] Validating achieve: 60
+2018-04-26 15:34:24.711: FSM not Preprocessed: ShowSpell : FSM
+2018-04-26 15:34:24.719: FSM not Preprocessed: LoopingSpell : FSM
+2018-04-26 15:34:24.728: FSM not Preprocessed: HideSpell : FSM
+2018-04-26 15:34:31.564: [Achievements] PopupDisplayManager: adding 0 rewards to load total=0
+2018-04-26 15:34:31.580: [Achievements] PopupDisplayManager: Calling AllAchievesShownListeners callbacks
+2018-04-26 15:34:31.787: FSM not Preprocessed: BurnFX : FSM
+2018-04-26 15:34:31.813: [Achievements] AckAchieveProgress: Achieve=1165 Progress=0
+2018-04-26 15:34:31.870: FSM not Preprocessed: BurnFX : FSM
+2018-04-26 15:34:31.900: FSM not Preprocessed: BurnFX : FSM
+2018-04-26 15:34:33.917: [Achievements] PopupDisplayManager: adding 0 rewards to load total=0
+2018-04-26 15:34:35.329: FSM not Preprocessed: BurnFX : FSM
+2018-04-26 15:34:35.345: FSM not Preprocessed: BurnFX : FSM
+2018-04-26 15:34:35.366: FSM not Preprocessed: BurnFX : FSM
+2018-04-26 15:34:44.077: FSM not Preprocessed: Socket : FSM
+2018-04-26 15:34:44.087: FSM not Preprocessed: SocketAccent : FSM
+2018-04-26 15:34:44.155: FSM not Preprocessed: DragStart : FSM
+2018-04-26 15:34:44.165: FSM not Preprocessed: DragStop : FSM
+2018-04-26 15:34:44.176: FSM not Preprocessed: Alert : FSM
+2018-04-26 15:34:45.176: FSM not Preprocessed: IsNew : FSM
+2018-04-26 15:34:45.195: FSM not Preprocessed: ClassName : FSM
+2018-04-26 15:34:45.221: FSM not Preprocessed: IsNew : FSM
+2018-04-26 15:34:45.240: FSM not Preprocessed: ClassName : FSM
+2018-04-26 15:34:45.263: FSM not Preprocessed: IsNew : FSM
+2018-04-26 15:34:45.280: FSM not Preprocessed: ClassName : FSM
+2018-04-26 15:34:45.304: FSM not Preprocessed: IsNew : FSM
+2018-04-26 15:34:45.322: FSM not Preprocessed: ClassName : FSM
+2018-04-26 15:34:45.405: FSM not Preprocessed: IsNew : FSM
+2018-04-26 15:34:45.425: FSM not Preprocessed: ClassName : FSM
+2018-04-26 15:34:45.477: FSM not Preprocessed: Button_FloatyButton : FSM
+2018-04-26 15:34:49.851: FSM not Preprocessed: PackOpeningFX_GIL(Clone) : FSM
+2018-04-26 15:34:50.175: FSM not Preprocessed: Rare_Flip1 : FSM
+2018-04-26 15:34:50.408: [Achievements] NotifyOfCardGained: [name=Coffin Crasher cardId=GIL_805 type=MINION] NORMAL 1
+2018-04-26 15:34:50.428: [Achievements] NotifyOfCardGained: [name=Rabid Worgen cardId=GIL_113 type=MINION] NORMAL 3
+2018-04-26 15:34:50.447: [Achievements] NotifyOfCardGained: [name=Druid of the Scythe cardId=GIL_188 type=MINION] NORMAL 2
+2018-04-26 15:34:50.465: [Achievements] NotifyOfCardGained: [name=Unpowered Steambot cardId=GIL_809 type=MINION] NORMAL 1
+2018-04-26 15:34:50.483: [Achievements] NotifyOfCardGained: [name=Marsh Drake cardId=GIL_683 type=MINION] NORMAL 2
+2018-04-26 15:34:50.584: FSM not Preprocessed: Common_Flip1 : FSM
+2018-04-26 15:34:50.735: FSM not Preprocessed: Common_Flip1 : FSM
+2018-04-26 15:34:50.803: FSM not Preprocessed: Common_Flip1 : FSM
+2018-04-26 15:34:50.865: FSM not Preprocessed: Common_Flip1 : FSM
+2018-04-26 15:34:51.174: Animator.GotoState: State could not be found
+2018-04-26 15:34:51.191: Invalid Layer Index '-1'
+2018-04-26 15:35:00.695: FSM not Preprocessed: Card_Hand_Ally_Death(Clone) : FSM
+2018-04-26 15:35:04.142: [Achievements] PopupDisplayManager: adding 0 rewards to load total=0

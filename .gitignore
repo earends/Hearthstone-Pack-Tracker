@@ -1,0 +1,10 @@
+bin/
+cards/
+obj/
+rapidjson/
+*.txt
+*.log
+*.rc
+*.depend
+*.cbp
+*.layout
