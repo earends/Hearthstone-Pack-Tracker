@@ -42,7 +42,7 @@ MainFrame::MainFrame (wxWindow *parent,wxString title,wxSize sze)
     :wxFrame(parent, wxID_ANY, title, wxDefaultPosition, sze)
 {
     //initialize anything
-
+    global_cost_value = -1;
     //Initialize lists
     PopulateLists();
 
@@ -457,13 +457,16 @@ bool MainFrame::CardHasStats(std::string stat,std::string stat_val,int cost_val,
     Document d;
     d.ParseStream(is);
 
+
     if (cost_val == -1) { // if we are not looking for a cards mana cost
+
         if (d[stat.c_str()].GetString() == stat_val) {
             return true;
         } else {
             return false;
         }
     } else { // if we ARE looking for a cards mana cost
+
         if (d[stat.c_str()].GetInt() == cost_val) {
             return true;
         } else {
@@ -475,34 +478,50 @@ bool MainFrame::CardHasStats(std::string stat,std::string stat_val,int cost_val,
 }
 
 /**
-PROBLEM:
-    - FILTER THROUGH ALL
-    - BUT COST IS INT AND REST ARE STR
-SOLUTION
-    - LOOP THROUGH STATS
-    - WHEN APROACH COST
-        - SET SAME VALUES
-        - CONVERT TO INT
-START AT ON SELECT VALUE AND GO FROM THERE
+
+
 **/
 void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_val) {
-
-
+            m_filtered_cards.Clear();
+            //m_filters_selected_values.Item(0)
+            if (cost_val == -1) { // if cost IS NOT being added to the list of filters
+                m_filters_selected.Add(stat);
+                m_filters_selected_values.Add(stat_val);
+            } else {// if cost IS being added to the list of filters
+                global_cost_value = cost_val;
+            }
+            //wxMessageBox(IntToStr(m_filters_selected.GetCount()));
             std::ifstream infile("collection.txt");
             std::string line;
-            while (infile >> line)
+
+            while (infile >> line) // each card
             {
-                for (int i = 0; i < m_filters_selected.GetCount(); i ++) {
-                    if (CardHasStats(m_filters_selected.Item(i),m_filters_selected_values.Item(i),cost_val,line)) {
-                        m_filtered_cards.Add(ParseFor("name",line));
-                        m_filtered_ids.Add(line);
+                bool isCardFiltered = true;
+                for (int i = 0; i < m_filters_selected.GetCount(); i ++) { //each filter
+                    if (CardHasStats(std::string(m_filters_selected.Item(i)),std::string(m_filters_selected_values.Item(i)),-1,line)) {
+                        //m
+
+                    } else {
+                        isCardFiltered = false;
                     }
+
                 }
-                if (CardHasStats(stat,stat_val,cost_val,line)) {
+                if (global_cost_value != -1) {
+
+                        if (CardHasStats(std::string("cost"),std::string(""),global_cost_value,line)) {
+                            //wxMessageBox("cost works");
+                            //m_filtered_cards.Add(ParseFor("name",line));
+                        } else {
+                            isCardFiltered = false;
+                        }
+                }
+                if (isCardFiltered) {
                     m_filtered_cards.Add(ParseFor("name",line));
-                    m_filtered_ids.Add(line);
+                    //wxMessageBox("works");
                 }
+
             }
+            //wxMessageBox(IntToStr(m_filtered_cards.GetCount()));
             m_card_list->SetStrings(m_filtered_cards);
 
 
@@ -512,10 +531,11 @@ void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_
 
 }
 
-/**
-Function needs to sift through list of filters and list of values
-**/
+
+
+
 void MainFrame::FilterBuffer(std::string stat,std::string stat_val,int cost_val)  {
+        /**
             std::ifstream infile("collection.txt");
             std::string line;
             while (infile >> line)
@@ -532,6 +552,7 @@ void MainFrame::FilterBuffer(std::string stat,std::string stat_val,int cost_val)
 
 
             infile.close();
+            **/
 }
 
 void MainFrame::OnResetFilter(wxCommandEvent& event) {
@@ -570,18 +591,32 @@ void MainFrame::OnConfigurePowerLog(wxCommandEvent& event) {
 
 }
 
-void MainFrame::RemoveFromFilter(std::string stat,std::string stat_val,int cost_val) {
-    int index = m_filtered_cards.Index(stat)
-    if ( index!= wxNOT_FOUND) {
-        m_filtered_cards.RemoveAt(index);
-        m_filters_selected_values.RemoveAt(index);
+void MainFrame::RemoveFromFilter(std::string stat) {
+    if (stat == "cost") {
+        global_cost_value = -1;
+    } else {
+        int index = m_filtered_cards.Index(stat);
+        if ( index!= wxNOT_FOUND) {
+            m_filtered_cards.RemoveAt(index);
+            m_filters_selected_values.RemoveAt(index);
+        }
     }
+    FilterCollection()
+
+}
+
+void MainFrame::FilterCollectionWithoutValues() {
+
 }
 
 
 
 /**
 Functionality that is still needed
+
+--
+Filter collection without adding values for reverting back previous filters
+--
 Filters need to be stacked
 add if card is golden to collection
     - adapt read settings or make seprate file to set gold

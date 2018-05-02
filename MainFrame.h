@@ -99,6 +99,7 @@ class MainFrame : public wxFrame
         wxArrayString m_filtered_ids;
         wxArrayString m_filters_selected;
         wxArrayString m_filters_selected_values;
+        int global_cost_value;
 
 
         DECLARE_EVENT_TABLE()
