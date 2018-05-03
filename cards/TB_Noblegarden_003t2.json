@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":1,"dbfId":49629,"id":"TB_Noblegarden_003t2","name":"Purple Shifting Dye","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0,"REQ_TARGET_WITH_RACE":38},"referencedTags":["LIFESTEAL"],"set":"TB","text":"Dye an Egg. When it hatches, it grants <b>Lifesteal</b>.","type":"SPELL"}

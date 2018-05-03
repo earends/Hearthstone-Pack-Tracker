@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":2,"dbfId":47302,"id":"LOOTA_BOSS_41p","mechanics":["AI_MUST_PLAY"],"name":"Join the Fray","playRequirements":{"REQ_NUM_MINION_SLOTS":1},"referencedTags":["RECRUIT"],"set":"LOOTAPALOOZA","text":"<b>Hero Power</b>\nBoth players <b>Recruit</b> a minion.","type":"HERO_POWER"}

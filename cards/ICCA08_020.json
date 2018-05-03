@@ -1,0 +1,1 @@
+{"attack":5,"cardClass":"DEATHKNIGHT","cost":7,"dbfId":45235,"durability":3,"elite":true,"id":"ICCA08_020","mechanics":["AI_MUST_PLAY","BATTLECRY","CANT_BE_DESTROYED","IMMUNE"],"name":"Frostmourne","set":"ICECROWN","text":"<b>Battlecry:</b> Remove all your minions. <b>Deathrattle:</b> Resummon them.","type":"WEAPON"}

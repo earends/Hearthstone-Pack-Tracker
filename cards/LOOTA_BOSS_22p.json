@@ -1,0 +1,1 @@
+{"artist":"Daria Tuzova","cardClass":"NEUTRAL","cost":0,"dbfId":46250,"id":"LOOTA_BOSS_22p","mechanics":["AI_MUST_PLAY"],"name":"Catch and Release","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0},"set":"LOOTAPALOOZA","text":"<b>Hero Power</b>\nSummon a random minion from your deck.","type":"HERO_POWER"}

@@ -1,0 +1,1 @@
+{"attack":6,"cardClass":"NEUTRAL","cost":3,"dbfId":2773,"health":3,"id":"BRMC_91","mechanics":["BATTLECRY"],"name":"Son of the Flame","playRequirements":{"REQ_TARGET_IF_AVAILABLE":0},"set":"TB","targetingArrowText":"Deal 6 damage.","text":"<b>Battlecry:</b> Deal 6 damage.","type":"MINION"}

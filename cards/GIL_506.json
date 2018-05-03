@@ -1,0 +1,1 @@
+{"artist":"Rock Niu","cardClass":"ROGUE","collectible":true,"cost":2,"dbfId":46897,"flavor":"50% off. Every shot must go!","id":"GIL_506","mechanics":["ECHO"],"name":"Cheap Shot","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"rarity":"COMMON","set":"GILNEAS","text":"<b>Echo</b>\n Deal $2 damage to a minion.","type":"SPELL"}

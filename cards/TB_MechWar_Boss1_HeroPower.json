@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":2,"dbfId":36110,"id":"TB_MechWar_Boss1_HeroPower","name":"Hello! Hello! Hello!","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0},"set":"TB","text":"<b>Hero Power</b>\nGive your lowest attack minion <b>Divine Shield</b> and <b>Taunt</b>.","type":"HERO_POWER"}

@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":1,"dbfId":38684,"id":"LOEA16_20","name":"Blessing of the Sun","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"referencedTags":["IMMUNE"],"set":"LOE","text":"Give a minion <b>Immune</b> this turn.","type":"SPELL"}

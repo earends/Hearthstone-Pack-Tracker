@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":1,"dbfId":49626,"id":"TB_Noblegarden_003t7","name":"Gold Shifting Dye","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0,"REQ_TARGET_WITH_RACE":38},"referencedTags":["DIVINE_SHIELD"],"set":"TB","text":"Dye an Egg. When it hatches, it grants <b>Divine Shield</b>.","type":"SPELL"}

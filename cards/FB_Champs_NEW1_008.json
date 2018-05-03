@@ -1,0 +1,1 @@
+{"attack":5,"cardClass":"DRUID","cost":7,"dbfId":49270,"health":5,"id":"FB_Champs_NEW1_008","mechanics":["CHOOSE_ONE"],"name":"Ancient of Lore","playRequirements":{"REQ_TARGET_IF_AVAILABLE":0},"rarity":"EPIC","set":"TB","text":"<b>Choose One -</b> Draw 2 cards; or Restore 5 Health.","type":"MINION"}

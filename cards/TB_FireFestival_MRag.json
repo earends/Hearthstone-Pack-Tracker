@@ -1,0 +1,1 @@
+{"attack":2,"cardClass":"NEUTRAL","cost":1,"dbfId":45854,"elite":true,"health":3,"id":"TB_FireFestival_MRag","mechanics":["CANT_ATTACK","IMMUNE","TRIGGER_VISUAL"],"name":"Mini-Rag","race":"ELEMENTAL","set":"TB","text":"Can^t attack. <b>Immune</b>.\nAt the end of each turn, burn your enemies randomly.","type":"MINION"}

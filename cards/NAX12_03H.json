@@ -1,0 +1,1 @@
+{"attack":3,"cardClass":"NEUTRAL","cost":1,"dbfId":2142,"durability":5,"id":"NAX12_03H","mechanics":["TRIGGER_VISUAL"],"name":"Jaws","referencedTags":["DEATHRATTLE"],"set":"NAXX","text":"Whenever a minion with <b>Deathrattle</b> dies, gain +2 Attack.","type":"WEAPON"}

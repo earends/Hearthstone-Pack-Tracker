@@ -55,6 +55,7 @@ MainFrame::MainFrame (wxWindow *parent,wxString title,wxSize sze)
     CreateCardList();
     CreateFilters();
     m_sizer->Add(m_top_sizer, 1, wxEXPAND);
+    AddStats();
     GetCollection();
     /**
     Layout sizers
@@ -222,7 +223,7 @@ void MainFrame::OnMouseUp(wxMouseEvent& event) {
 void MainFrame::PopulateLists() {
 
     m_class_list = wxArrayString();
-    m_class_list.Add("None");
+    m_class_list.Add("CHOOSE A HERO");
     m_class_list.Add("Warrior");
     m_class_list.Add("Shaman");
     m_class_list.Add("Rogue");
@@ -235,13 +236,13 @@ void MainFrame::PopulateLists() {
     m_class_list.Add("Neutral");
 
     m_type_list = wxArrayString();
-    m_type_list.Add("None");
+    m_type_list.Add("CARD TYPE");
     m_type_list.Add("Minion");
     m_type_list.Add("Spell");
     m_type_list.Add("Weapon");
 
     m_cost_list = wxArrayString();
-    m_cost_list.Add("None");
+    m_cost_list.Add("MANA COST");
     m_cost_list.Add("0");
     m_cost_list.Add("1");
     m_cost_list.Add("2");
@@ -255,14 +256,14 @@ void MainFrame::PopulateLists() {
     m_cost_list.Add("10");
 
     m_rarity_list = wxArrayString();
-    m_rarity_list.Add("None");
+    m_rarity_list.Add("HOW RARE IS IT?");
     m_rarity_list.Add("Legendary");
     m_rarity_list.Add("Epic");
     m_rarity_list.Add("Rare");
     m_rarity_list.Add("Common");
 
     m_rarity_golden_list = wxArrayString();
-    m_rarity_golden_list.Add("None");
+    m_rarity_golden_list.Add("IS IT GOLDEN?");
     m_rarity_golden_list.Add("Yes");
     m_rarity_golden_list.Add("No");
 }
@@ -331,6 +332,7 @@ void MainFrame::OnSelectRarity(wxCommandEvent& event) {
         break;
     default:
         RemoveFromFilter("rarity");
+
         break;
     }
 }
@@ -369,6 +371,7 @@ void MainFrame::OnSelectClass(wxCommandEvent& event) {
         break;
     default:
         RemoveFromFilter("cardClass");
+
         break;
     }
 }
@@ -410,6 +413,7 @@ void MainFrame::OnSelectMana(wxCommandEvent& event) {
         break;
     default:
         RemoveFromFilter("cost");
+
         break;
     }
 }
@@ -428,6 +432,7 @@ void MainFrame::OnSelectCardType(wxCommandEvent& event) {
         break;
     default:
         RemoveFromFilter("type");
+
         break;
     }
 }
@@ -442,6 +447,7 @@ void MainFrame::OnSelectGolden(wxCommandEvent& event) {
         break;
 
     default:
+
         break;
     }
 }
@@ -482,14 +488,30 @@ bool MainFrame::CardHasStats(std::string stat,std::string stat_val,int cost_val,
 
 **/
 void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_val) {
+
+
             m_filtered_cards.Clear();
+            // case for filtering without any new filters changed
+
+                if (cost_val == -1) { // if cost IS NOT being added to the list of filters
+                    if (m_filters_selected.Index(stat) != wxNOT_FOUND) {
+                        RemoveFromFilter(stat);
+
+                    }
+                    m_filters_selected.Add(stat);
+                    m_filters_selected_values.Add(stat_val);
+                } else {// if cost IS being added to the list of filters
+                    if (global_cost_value != -1) {// cost filter already applied
+                        RemoveFromFilter("cost");
+                    }
+                    global_cost_value = cost_val;
+                }
+
+
+
             //m_filters_selected_values.Item(0)
-            if (cost_val == -1) { // if cost IS NOT being added to the list of filters
-                m_filters_selected.Add(stat);
-                m_filters_selected_values.Add(stat_val);
-            } else {// if cost IS being added to the list of filters
-                global_cost_value = cost_val;
-            }
+
+
             //wxMessageBox(IntToStr(m_filters_selected.GetCount()));
             std::ifstream infile("collection.txt");
             std::string line;
@@ -499,8 +521,6 @@ void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_
                 bool isCardFiltered = true;
                 for (int i = 0; i < m_filters_selected.GetCount(); i ++) { //each filter
                     if (CardHasStats(std::string(m_filters_selected.Item(i)),std::string(m_filters_selected_values.Item(i)),-1,line)) {
-                        //m
-
                     } else {
                         isCardFiltered = false;
                     }
@@ -531,29 +551,6 @@ void MainFrame::FilterCollection(std::string stat,std::string stat_val,int cost_
 
 }
 
-
-
-
-void MainFrame::FilterBuffer(std::string stat,std::string stat_val,int cost_val)  {
-        /**
-            std::ifstream infile("collection.txt");
-            std::string line;
-            while (infile >> line)
-            {
-                for (int i = 0; i < m_filters_selected.GetCount(); i ++) {
-                    if (CardHasStats(m_filters_selected.Item(i),stat_val,cost_val,line)) {
-                        m_filtered_cards.Add(ParseFor("name",line));
-                        m_filtered_ids.Add(line);
-                    }
-                }
-
-            }
-            m_card_list->SetStrings(m_filtered_cards);
-
-
-            infile.close();
-            **/
-}
 
 void MainFrame::OnResetFilter(wxCommandEvent& event) {
     m_card_list->SetStrings(m_collection);
@@ -595,19 +592,70 @@ void MainFrame::RemoveFromFilter(std::string stat) {
     if (stat == "cost") {
         global_cost_value = -1;
     } else {
-        int index = m_filtered_cards.Index(stat);
+        int index = m_filters_selected.Index(stat);
         if ( index!= wxNOT_FOUND) {
-            m_filtered_cards.RemoveAt(index);
+            m_filters_selected.RemoveAt(index);
             m_filters_selected_values.RemoveAt(index);
         }
     }
-    FilterCollection()
+
 
 }
+/**
+STATS:
+    TOTAL CARDS - 20
+    LEGENDARY CARDS - 4/20
+    EPIC CARDS - X/Y
+    ..
+    GOLDEN CARDS - X/Y
 
-void MainFrame::FilterCollectionWithoutValues() {
 
+
+**/
+void MainFrame::AddStats() {
+    m_stats_sizer = new wxBoxSizer(wxHORIZONTAL);
+    m_stats_card_sizer = new wxBoxSizer(wxVERTICAL);
+    m_stats_collection_sizer = new wxBoxSizer(wxVERTICAL);
+
+    m_total_cards_text = new wxStaticText(this,wxID_ANY,wxT("Total Cards - 10/20 (50%)"));
+    m_total_legendary_text = new wxStaticText(this,wxID_ANY,wxT("Total Legendaries - 10/20 (50%)"));
+    m_total_epic_text = new wxStaticText(this,wxID_ANY,wxT("Total Epic - 10/20 (50%)"));
+    m_total_rare_text = new wxStaticText(this,wxID_ANY,wxT("Total Rare - 10/20 (50%)"));
+    m_total_common_text = new wxStaticText(this,wxID_ANY,wxT("Total Common - 10/20 (50%)"));
+    m_total_gold_text = new wxStaticText(this,wxID_ANY,wxT("Total Gold - 10/20 (50%)"));
+
+    m_stats_collection_sizer->Add(m_total_cards_text,1,wxEXPAND);
+    m_stats_collection_sizer->Add(m_total_legendary_text,1,wxEXPAND);
+    m_stats_collection_sizer->Add(m_total_epic_text,1,wxEXPAND);
+    m_stats_collection_sizer->Add(m_total_rare_text,1,wxEXPAND);
+    m_stats_collection_sizer->Add(m_total_common_text,1,wxEXPAND);
+    m_stats_collection_sizer->Add(m_total_gold_text,1,wxEXPAND);
+
+    m_card_name_text = new wxStaticText(this,wxID_ANY,wxT("Total Gold - 10/20 (50%)"));
+    m_card_cost_text = new wxStaticText(this,wxID_ANY,wxT("Total Gold - 10/20 (50%)"));
+    m_card_rarity_text = new wxStaticText(this,wxID_ANY,wxT("Total Gold - 10/20 (50%)"));
+    m_card_cardType_text = new wxStaticText(this,wxID_ANY,wxT("Total Gold - 10/20 (50%)"));
+    m_card_golden_text = new wxStaticText(this,wxID_ANY,wxT("Total Gold - 10/20 (50%)"));
+    m_card_text_text = new wxStaticText(this,wxID_ANY,wxT("Total Gold - 10/20 (50%)")); //description
+
+    m_stats_card_sizer->Add(m_card_name_text,1,wxEXPAND);
+    m_stats_card_sizer->Add(m_card_cost_text,1,wxEXPAND);
+    m_stats_card_sizer->Add(m_card_rarity_text,1,wxEXPAND);
+    m_stats_card_sizer->Add(m_card_cardType_text,1,wxEXPAND);
+    m_stats_card_sizer->Add(m_card_golden_text,1,wxEXPAND);
+    m_stats_card_sizer->Add(m_card_text_text,1,wxEXPAND);
+
+
+
+
+    m_stats_sizer ->Add(m_stats_collection_sizer,1,wxEXPAND);
+
+    m_stats_sizer ->Add(m_stats_card_sizer,1,wxEXPAND);
+
+
+    m_sizer->Add(m_stats_sizer,1,wxEXPAND);
 }
+
 
 
 
@@ -615,7 +663,8 @@ void MainFrame::FilterCollectionWithoutValues() {
 Functionality that is still needed
 
 --
-Filter collection without adding values for reverting back previous filters
+Consider replaceing None with name of type of filter
+add stats
 --
 Filters need to be stacked
 add if card is golden to collection

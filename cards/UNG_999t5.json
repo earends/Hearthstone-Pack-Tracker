@@ -1,0 +1,1 @@
+{"artist":"Jakub Kasber","cardClass":"NEUTRAL","cost":0,"dbfId":41060,"id":"UNG_999t5","mechanics":["CANT_BE_TARGETED_BY_SPELLS","CANT_BE_TARGETED_BY_HERO_POWERS"],"name":"Liquid Membrane","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"set":"UNGORO","text":"Can^t be targeted by spells or Hero Powers.","type":"SPELL"}

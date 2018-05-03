@@ -1,0 +1,1 @@
+{"artist":"Peerasak Senalai","cardClass":"NEUTRAL","cost":1,"dbfId":2153,"id":"PART_003","mechanics":["SPARE_PART"],"name":"Rusty Horn","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"referencedTags":["TAUNT"],"set":"GVG","text":"Give a minion <b>Taunt</b>.","type":"SPELL"}

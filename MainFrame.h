@@ -14,6 +14,7 @@
     #include <wx/wx.h>
 #endif
 
+#include "wx/statline.h"
 class MainFrame : public wxFrame
 {
 
@@ -50,23 +51,27 @@ class MainFrame : public wxFrame
         void OnSelectMana(wxCommandEvent& event);
         void OnSelectCardType(wxCommandEvent& event);
         void OnSelectGolden(wxCommandEvent& event);
+        void FilterCollectionWithoutValues();
         wxString ParseFor(std::string id,std::string fileName);
         std::string IntToStr(int n);
         void modify_collection(std::string str);
         void SweepLog();
         bool CardHasStats(std::string stat,std::string stat_val,int cost_val,wxString cardId);
         void FilterCollection(std::string stat,std::string stat_val,int cost_val);
-        void FilterBuffer(std::string stat,std::string stat_val,int cost_val);
+
         void OnResetFilter(wxCommandEvent &event);
         void OnConfigurePowerLog(wxCommandEvent& event);
         void RemoveFromFilter(std::string stat);
+        void AddStats();
 
         //varaibles
         wxSize m_win_size;
         //sIZERS
         wxBoxSizer * m_cardList_sizer; // holds cardlist label plus list (vertical)
         wxBoxSizer * m_filter_sizer; // holds filter and label (vertical)
-        wxBoxSizer * m_stats_sizer; // holds stats (horizontal)
+        wxBoxSizer * m_stats_sizer; // holds stats (horizontal) sizer  splits collections vs cards stats
+        wxBoxSizer * m_stats_card_sizer; // holds card stats
+        wxBoxSizer * m_stats_collection_sizer; // holds collection stats
         wxBoxSizer * m_sizer; // sizer that holds everything up and down
         wxBoxSizer * m_top_sizer; // holds filter and card list sizer (HORIZONTAL)
         //Labels
@@ -90,6 +95,22 @@ class MainFrame : public wxFrame
         wxChoice *m_rarity_golden_choice;
         wxArrayString m_rarity_golden_list;
 
+        //STATS STATIC TEXTS
+        wxStaticText* m_total_cards_text;
+        wxStaticText* m_total_legendary_text;
+        wxStaticText* m_total_epic_text;
+        wxStaticText* m_total_rare_text;
+        wxStaticText* m_total_common_text;
+        wxStaticText* m_total_gold_text;
+
+        wxStaticText* m_card_name_text;
+        wxStaticText* m_card_cost_text;
+        wxStaticText* m_card_rarity_text;
+        wxStaticText* m_card_cardType_text;
+        wxStaticText* m_card_golden_text;
+        wxStaticText* m_card_text_text; //description
+
+
         //OTHER
         wxEditableListBox* m_card_list;
         wxArrayString m_collection;
@@ -100,8 +121,6 @@ class MainFrame : public wxFrame
         wxArrayString m_filters_selected;
         wxArrayString m_filters_selected_values;
         int global_cost_value;
-
-
         DECLARE_EVENT_TABLE()
 };
 

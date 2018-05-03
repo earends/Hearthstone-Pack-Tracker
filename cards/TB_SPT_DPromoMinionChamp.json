@@ -1,0 +1,1 @@
+{"attack":4,"cardClass":"NEUTRAL","cost":5,"dbfId":42225,"entourage":["AT_050","CS2_112","LOE_118","EX1_567","TB_BlingBrawl_Weapon","CS2_106","CFM_631","CS2_080"],"health":4,"id":"TB_SPT_DPromoMinionChamp","mechanics":["DEATHRATTLE"],"name":"Hell Bovine Champion","race":"DEMON","set":"TB","text":"<b>Deathrattle:</b> Current turn player gains a random weapon.","type":"MINION"}

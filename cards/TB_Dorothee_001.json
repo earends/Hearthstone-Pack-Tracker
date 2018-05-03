@@ -1,0 +1,1 @@
+{"attack":0,"cardClass":"NEUTRAL","cost":4,"dbfId":41914,"health":10,"hideStats":true,"id":"TB_Dorothee_001","mechanics":["UNTOUCHABLE"],"name":"Dorothee","referencedTags":["CHARGE","TAUNT"],"set":"TB","text":"Minions to the left have <b>Charge</b>. Minions to the right have <b>Taunt</b>.","type":"MINION"}

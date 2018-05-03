@@ -1,0 +1,1 @@
+{"attack":4,"cardClass":"NEUTRAL","cost":5,"dbfId":39070,"elite":true,"health":7,"id":"TB_KTRAF_6","mechanics":["TRIGGER_VISUAL"],"name":"Grobbulus","referencedTags":["POISONOUS"],"set":"TB","text":"Whenever this kills a minion, summon a <b>Poisonous</b> 2/2 Slime.","type":"MINION"}

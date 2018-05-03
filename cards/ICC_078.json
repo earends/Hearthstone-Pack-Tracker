@@ -1,0 +1,1 @@
+{"artist":"Zoltan Boros","cardClass":"SHAMAN","collectible":true,"cost":4,"dbfId":42747,"flavor":"One of our more snowbally cards.","id":"ICC_078","mechanics":["FREEZE"],"name":"Avalanche","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"rarity":"RARE","set":"ICECROWN","text":"<b>Freeze</b> a minion and deal $3 damage to adjacent ones.","type":"SPELL"}

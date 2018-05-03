@@ -1,0 +1,1 @@
+{"artist":"Garrett Hanna","cardClass":"NEUTRAL","cost":2,"dbfId":47363,"id":"LOOTA_BOSS_51p","name":"Alluring Tune","playRequirements":{"REQ_ENEMY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_NUM_MINION_SLOTS":1,"REQ_TARGET_MAX_ATTACK":2,"REQ_TARGET_TO_PLAY":0},"set":"LOOTAPALOOZA","text":"<b>Hero Power</b>\nGain control of an enemy minion with 2 or less Attack.","type":"HERO_POWER"}

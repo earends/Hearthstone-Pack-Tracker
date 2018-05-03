@@ -1,0 +1,1 @@
+{"cardClass":"PRIEST","cost":2,"dbfId":49240,"id":"BCON_015","name":"Generous Spirit","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"rarity":"FREE","set":"CORE","text":"[x]Choose a friendly minion.\nGive it to your opponent\nand draw 3 cards.","type":"SPELL"}

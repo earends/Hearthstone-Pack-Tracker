@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":2,"dbfId":48180,"id":"GILA_BOSS_25p","name":"Trap Preparation","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_SECRET_ZONE_CAP_FOR_NON_SECRET":0},"set":"GILNEAS","text":"<b>Hero Power</b>\nPut a random <b>Secret</b> from your deck into the battlefield.","type":"HERO_POWER"}

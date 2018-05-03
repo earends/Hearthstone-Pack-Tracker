@@ -1,0 +1,1 @@
+{"artist":"Jakub Kasper","attack":4,"cardClass":"NEUTRAL","collectible":true,"cost":4,"dbfId":2518,"flavor":"The crowd ALWAYS yells lethal.","health":4,"id":"AT_121","mechanics":["TRIGGER_VISUAL"],"name":"Crowd Favorite","rarity":"EPIC","referencedTags":["BATTLECRY"],"set":"TGT","text":"Whenever you play a card with <b>Battlecry</b>, gain +1/+1.","type":"MINION"}

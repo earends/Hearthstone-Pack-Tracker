@@ -1,0 +1,1 @@
+{"cardClass":"HUNTER","collectionText":"<b>Hero Power</b>\nDeal $3 damage.","cost":2,"dbfId":2738,"id":"AT_132_HUNTER","name":"Ballista Shot","playRequirements":{"REQ_MINION_OR_ENEMY_HERO":0,"REQ_STEADY_SHOT":0},"set":"TGT","text":"<b>Hero Power</b>\nDeal $3 damage to the enemy hero.","type":"HERO_POWER"}

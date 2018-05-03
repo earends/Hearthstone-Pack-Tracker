@@ -1,0 +1,1 @@
+{"artist":"Peerasak Senalai","cardClass":"NEUTRAL","cost":1,"dbfId":2155,"id":"PART_005","mechanics":["FREEZE","SPARE_PART"],"name":"Emergency Coolant","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"set":"GVG","text":"<b>Freeze</b> a minion.","type":"SPELL"}

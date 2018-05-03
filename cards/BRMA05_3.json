@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":4,"dbfId":2330,"id":"BRMA05_3","name":"Living Bomb","playRequirements":{"REQ_ENEMY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"set":"BRM","text":"Choose an enemy minion. If it lives until your next turn, deal $5 damage to all enemies.","type":"SPELL"}

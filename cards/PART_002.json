@@ -1,0 +1,1 @@
+{"artist":"Nutthapon Petthai","cardClass":"NEUTRAL","cost":1,"dbfId":2152,"id":"PART_002","mechanics":["SPARE_PART"],"name":"Time Rewinder","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"set":"GVG","text":"Return a friendly minion to your hand.","type":"SPELL"}

@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":0,"dbfId":46350,"id":"LOOTA_BOSS_25p","mechanics":["AI_MUST_PLAY"],"name":"Vindictive Breath","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0},"set":"LOOTAPALOOZA","text":"<b>Hero Power</b>\nDeal 1 damage to all enemies for each missing Master Chest.","type":"HERO_POWER"}

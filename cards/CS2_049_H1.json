@@ -1,0 +1,1 @@
+{"cardClass":"SHAMAN","cost":2,"dbfId":40247,"entourage":["CS2_050","CS2_051","CS2_052","NEW1_009"],"id":"CS2_049_H1","name":"Totemic Call","playRequirements":{"REQ_ENTIRE_ENTOURAGE_NOT_IN_PLAY":0,"REQ_NUM_MINION_SLOTS":1},"rarity":"FREE","set":"HERO_SKINS","text":"<b>Hero Power</b>\nSummon a random Totem.","type":"HERO_POWER"}

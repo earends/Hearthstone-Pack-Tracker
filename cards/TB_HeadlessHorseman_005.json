@@ -1,0 +1,1 @@
+{"attack":5,"cardClass":"NEUTRAL","cost":5,"dbfId":46957,"health":6,"id":"TB_HeadlessHorseman_005","mechanics":["TRIGGER_VISUAL"],"name":"Spectral Steed","set":"TB","text":"Minions attacking this have a 50% chance to attack a different character.","type":"MINION"}

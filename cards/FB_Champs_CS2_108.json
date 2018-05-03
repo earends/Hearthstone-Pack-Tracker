@@ -1,0 +1,1 @@
+{"cardClass":"WARRIOR","cost":1,"dbfId":49274,"id":"FB_Champs_CS2_108","name":"Execute","playRequirements":{"REQ_DAMAGED_TARGET":0,"REQ_ENEMY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"rarity":"FREE","set":"TB","text":"Destroy a damaged enemy minion.","type":"SPELL"}

@@ -1,0 +1,1 @@
+{"artist":"Milvoj Ceran","cardClass":"PALADIN","collectible":true,"cost":2,"dbfId":46713,"flavor":"Weirdly, the bells stop ringing after 5.","id":"GIL_145","mechanics":["ECHO"],"name":"Sound the Bells!","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"rarity":"COMMON","set":"GILNEAS","text":"<b>Echo</b>\nGive a minion +1/+2.","type":"SPELL"}

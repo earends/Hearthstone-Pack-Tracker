@@ -1,0 +1,1 @@
+{"artist":"Kevin Chin","cardClass":"SHAMAN","collectible":true,"cost":1,"dbfId":767,"flavor":"Earth Shock? Shouldn^t it be \"Azeroth Shock\"?","id":"EX1_245","mechanics":["SILENCE"],"name":"Earth Shock","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"rarity":"COMMON","set":"EXPERT1","text":"<b>Silence</b> a minion, then deal $1 damage to it.","type":"SPELL"}

@@ -1,0 +1,1 @@
+{"artist":"Nutchapol Thitinunthakorn","cardClass":"NEUTRAL","cost":1,"dbfId":2154,"id":"PART_004","mechanics":["SPARE_PART"],"name":"Finicky Cloakfield","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"referencedTags":["STEALTH"],"set":"GVG","text":"Give a friendly minion <b>Stealth</b> until your next turn.","type":"SPELL"}

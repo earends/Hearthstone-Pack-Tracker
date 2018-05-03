@@ -1,0 +1,1 @@
+{"artist":"Phil Saunders","cardClass":"WARRIOR","collectible":true,"cost":2,"dbfId":47515,"flavor":"\"Left, right, left, right, there^s none of the enemy left… Right?\"","id":"GIL_654","mechanics":["ECHO"],"name":"Warpath","playRequirements":{"REQ_MINION_TARGET":0},"rarity":"COMMON","set":"GILNEAS","text":"<b>Echo</b>\nDeal $1 damage to all minions.","type":"SPELL"}

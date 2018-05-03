@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":0,"dbfId":2141,"id":"NAX12_02H","mechanics":["AI_MUST_PLAY"],"name":"Decimate","playRequirements":{"REQ_MINIMUM_ENEMY_MINIONS":1},"set":"NAXX","text":"<b>Hero Power</b>\nChange the Health of enemy minions to 1.","type":"HERO_POWER"}

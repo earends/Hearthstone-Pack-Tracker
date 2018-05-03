@@ -1,0 +1,1 @@
+{"attack":3,"cardClass":"NEUTRAL","cost":3,"dbfId":40377,"health":4,"id":"TB_Coopv3_100","mechanics":["TRIGGER_VISUAL"],"name":"Dragonscale Warrior","referencedTags":["DIVINE_SHIELD"],"set":"TB","text":"Whenever any player targets this minion with a spell, that player draws a card.","type":"MINION"}

@@ -1,0 +1,1 @@
+{"artist":"Zoltan & Gabor","cardClass":"SHAMAN","collectible":true,"cost":2,"dbfId":404,"flavor":"It was just a flesh wound.","id":"CS2_038","name":"Ancestral Spirit","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"rarity":"RARE","referencedTags":["DEATHRATTLE"],"set":"EXPERT1","text":"Give a minion \"<b>Deathrattle:</b> Resummon this minion.\"","type":"SPELL"}

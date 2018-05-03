@@ -1,0 +1,1 @@
+{"attack":1,"cardClass":"NEUTRAL","cost":1,"dbfId":42075,"health":5,"id":"TB_FW_Mortar","mechanics":["TRIGGER_VISUAL"],"name":"Dwarf Demolitionist","set":"TB","text":"Whenever you play a card, deal 1-4 damage to a random enemy.","type":"MINION"}

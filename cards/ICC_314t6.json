@@ -1,0 +1,1 @@
+{"artist":"Dan Scott","cardClass":"DEATHKNIGHT","cost":2,"dbfId":43120,"id":"ICC_314t6","mechanics":["ImmuneToSpellpower"],"name":"Obliterate","playRequirements":{"REQ_MINION_TARGET":0,"REQ_TARGET_TO_PLAY":0},"set":"ICECROWN","text":"Destroy a minion. Your hero takes damage equal to its Health.","type":"SPELL"}

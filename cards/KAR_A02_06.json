@@ -1,0 +1,1 @@
+{"artist":"L. Lullabi & N. Thitinunthakorn","attack":3,"cardClass":"NEUTRAL","cost":4,"dbfId":39583,"health":3,"id":"KAR_A02_06","mechanics":["BATTLECRY"],"name":"Pitcher","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_TARGET_IF_AVAILABLE":0},"set":"KARA","targetingArrowText":"Give +2/+2.","text":"<b>Battlecry:</b> Give a minion +2/+2.","type":"MINION"}

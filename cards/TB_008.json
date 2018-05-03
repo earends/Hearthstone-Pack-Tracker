@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":1,"dbfId":2659,"id":"TB_008","mechanics":["AFFECTED_BY_SPELL_POWER"],"name":"Rotten Banana","playRequirements":{"REQ_TARGET_TO_PLAY":0},"set":"TB","text":"Deal $1 damage.","type":"SPELL"}

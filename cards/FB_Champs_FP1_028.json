@@ -1,0 +1,1 @@
+{"attack":1,"cardClass":"NEUTRAL","cost":1,"dbfId":48858,"health":2,"id":"FB_Champs_FP1_028","mechanics":["TRIGGER_VISUAL"],"name":"Undertaker","rarity":"COMMON","referencedTags":["DEATHRATTLE"],"set":"TB","text":"Whenever you summon a minion with <b>Deathrattle</b>, gain +1/+1.","type":"MINION"}

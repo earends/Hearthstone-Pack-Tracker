@@ -1,0 +1,1 @@
+{"attack":5,"cardClass":"NEUTRAL","cost":4,"dbfId":40768,"health":5,"id":"KAR_A02_06H","mechanics":["BATTLECRY"],"name":"Pitcher","playRequirements":{"REQ_FRIENDLY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_TARGET_IF_AVAILABLE":0},"set":"KARA","targetingArrowText":"Give +3/+3.","text":"<b>Battlecry:</b> Give a minion +3/+3.","type":"MINION"}

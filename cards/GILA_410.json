@@ -1,0 +1,1 @@
+{"artist":"Max Greck","attack":9,"cardClass":"NEUTRAL","cost":7,"dbfId":48497,"elite":true,"health":9,"id":"GILA_410","mechanics":["BATTLECRY"],"name":"Bubba","playRequirements":{"REQ_ENEMY_TARGET":0,"REQ_MINION_TARGET":0,"REQ_TARGET_IF_AVAILABLE":0},"race":"BEAST","set":"GILNEAS","text":"<b>Battlecry</b>: Summon six 1/1 Bloodhounds to attack an enemy minion.","type":"MINION"}

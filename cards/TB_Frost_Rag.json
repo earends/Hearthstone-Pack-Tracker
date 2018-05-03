@@ -1,0 +1,1 @@
+{"attack":1,"cardClass":"NEUTRAL","cost":3,"dbfId":46046,"health":4,"id":"TB_Frost_Rag","mechanics":["CANT_ATTACK","DEATHRATTLE"],"name":"Ragnaros?","race":"ELEMENTAL","set":"TB","text":"Can^t Attack.\n<b>Deathrattle:</b> Whoever kills this deals 4 damage to their opponent.","type":"MINION"}

@@ -1,0 +1,1 @@
+{"cardClass":"NEUTRAL","cost":2,"dbfId":38591,"id":"LOEA06_04h","mechanics":["AFFECTED_BY_SPELL_POWER"],"name":"Shattering Spree","playRequirements":{"REQ_TARGET_TO_PLAY":0},"set":"LOE","text":"Destroy all Statues. For each destroyed, deal 3 damage.","type":"SPELL"}
