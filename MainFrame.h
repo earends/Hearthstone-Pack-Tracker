@@ -15,6 +15,8 @@
 #endif
 
 #include "wx/statline.h"
+#include "wx/listctrl.h"
+
 class MainFrame : public wxFrame
 {
 
@@ -24,15 +26,17 @@ class MainFrame : public wxFrame
     protected:
         enum {
 
-                idBtnCollect,
+                idBtnCollect, //menu
                 idBtnLoad,
                 idBtnReset,
                 idBtnLoadPowerLog,
-                idChoiceRarity,
+                idBtnStats,
+                idChoiceRarity, // drop down menu
                 idChoiceClass,
                 idChoiceMana,
                 idChoiceCardType,
                 idChoiceGolden,
+                idListBox, // list of cards
             };
     private:
         //fUNCTIONS
@@ -50,7 +54,6 @@ class MainFrame : public wxFrame
         void OnSelectClass(wxCommandEvent& event);
         void OnSelectMana(wxCommandEvent& event);
         void OnSelectCardType(wxCommandEvent& event);
-        void OnSelectGolden(wxCommandEvent& event);
         void FilterCollectionWithoutValues();
         wxString ParseFor(std::string id,std::string fileName);
         std::string IntToStr(int n);
@@ -58,11 +61,15 @@ class MainFrame : public wxFrame
         void SweepLog();
         bool CardHasStats(std::string stat,std::string stat_val,int cost_val,wxString cardId);
         void FilterCollection(std::string stat,std::string stat_val,int cost_val);
-
+        void OnSelectFromList(wxListEvent& event);
         void OnResetFilter(wxCommandEvent &event);
         void OnConfigurePowerLog(wxCommandEvent& event);
         void RemoveFromFilter(std::string stat);
         void AddStats();
+        void GetStats();
+        void ResetStats();
+        void OnDisplayStats(wxCommandEvent& event);
+        void SetStats();
 
         //varaibles
         wxSize m_win_size;
@@ -82,7 +89,7 @@ class MainFrame : public wxFrame
         wxStaticText *m_card_type_label; // minion..weapons..spell
         wxStaticText *m_cost_label; // 0 mana, 2 mana...
         wxStaticText *m_rarity_label; // legendary .. epic..
-        wxStaticText *m_rarity_golden_label; // Golden or not
+
         //DROP DOWN CHOICES
         wxChoice *m_class_choice;
         wxArrayString m_class_list;
@@ -92,28 +99,34 @@ class MainFrame : public wxFrame
         wxArrayString m_cost_list;
         wxChoice *m_rarity_choice;
         wxArrayString m_rarity_list;
-        wxChoice *m_rarity_golden_choice;
-        wxArrayString m_rarity_golden_list;
+
 
         //STATS STATIC TEXTS
         wxStaticText* m_total_cards_text;
         wxStaticText* m_total_legendary_text;
         wxStaticText* m_total_epic_text;
         wxStaticText* m_total_rare_text;
-        wxStaticText* m_total_common_text;
-        wxStaticText* m_total_gold_text;
+        wxStaticText* m_total_dust_text;
 
         wxStaticText* m_card_name_text;
         wxStaticText* m_card_cost_text;
         wxStaticText* m_card_rarity_text;
         wxStaticText* m_card_cardType_text;
-        wxStaticText* m_card_golden_text;
         wxStaticText* m_card_text_text; //description
+
+        int m_total_card_count;
+        int m_total_legendary_count;
+        int m_total_epic_count;
+        int m_total_rare_count;
+        int m_total_common_count;
+        int m_total_dust_count;
+
 
 
         //OTHER
         wxEditableListBox* m_card_list;
         wxArrayString m_collection;
+        wxArrayString m_collection_ids;
         wxArrayString m_filtered_cards;
         wxString m_log_path;
         wxString m_power_log_path;
@@ -121,6 +134,8 @@ class MainFrame : public wxFrame
         wxArrayString m_filters_selected;
         wxArrayString m_filters_selected_values;
         int global_cost_value;
+        bool show_stats;
+
         DECLARE_EVENT_TABLE()
 };
 

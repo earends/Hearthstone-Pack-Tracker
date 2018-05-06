@@ -25,7 +25,6 @@ IMPLEMENT_APP(Hearthstone_Pack_TrackerApp);
 bool Hearthstone_Pack_TrackerApp::OnInit()
 {
     wxInitAllImageHandlers();
-    wxBoxSizer* sizer = new wxBoxSizer(wxHORIZONTAL);
     m_frame = new MainFrame(NULL,wxT("Hearthstone Pack Tracker (v.Evan)"),wxSize(600,800));
     m_frame->Show();
     return true;
