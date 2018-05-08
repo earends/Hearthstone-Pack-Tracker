@@ -1,7 +1,6 @@
 bin/
 obj/
 rapidjson/
-*.txt
 *.log
 *.rc
 *.depend
